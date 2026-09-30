@@ -1,0 +1,146 @@
+:root {
+    --kxc-primary: #0f172a;
+    --kxc-primary-hover: #1e293b;
+    --kxc-ring-color: rgba(15, 23, 42, 0.12);
+    --kxc-bg-input: #f8fafc;
+    --kxc-border-color: #e2e8f0;
+    --kxc-border-hover: #cbd5e1;
+    --kxc-text-main: #334155;
+    --kxc-text-muted: #94a3b8;
+    
+    --kxc-success-bg: #f0fdf4;
+    --kxc-success-text: #166534;
+    --kxc-success-border: #bbf7d0;
+    
+    --kxc-error-bg: #fef2f2;
+    --kxc-error-text: #991b1b;
+    --kxc-error-border: #fecaca;
+}
+
+/* Container Form */
+#kxc-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid var(--kxc-border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+}
+
+/* Inputs & Textarea */
+#kxc-contact-form input,
+#kxc-contact-form textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+    color: var(--kxc-text-main);
+    background-color: var(--kxc-bg-input);
+    border: 1.5px solid var(--kxc-border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+#kxc-contact-form input::placeholder,
+#kxc-contact-form textarea::placeholder {
+    color: var(--kxc-text-muted);
+}
+
+#kxc-contact-form input:hover,
+#kxc-contact-form textarea:hover {
+    border-color: var(--kxc-border-hover);
+}
+
+#kxc-contact-form input:focus,
+#kxc-contact-form textarea:focus {
+    background-color: #ffffff;
+    border-color: var(--kxc-primary);
+    box-shadow: 0 0 0 4px var(--kxc-ring-color);
+}
+
+#kxc-contact-form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Submit Button */
+#kxc-contact-form button[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: var(--kxc-primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 0.25rem;
+}
+
+#kxc-contact-form button[type="submit"]:hover {
+    background-color: var(--kxc-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+#kxc-contact-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+#kxc-contact-form button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Dynamic Notification Message */
+#kxc-contact-form .kxc-contact-message {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+    display: none;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    animation: kxc-fade-in 0.3s ease;
+}
+
+#kxc-contact-form .kxc-contact-message.success,
+#kxc-contact-form .kxc-contact-message.error {
+    display: block;
+}
+
+#kxc-contact-form .kxc-contact-message.success {
+    color: var(--kxc-success-text);
+    background-color: var(--kxc-success-bg);
+    border: 1px solid var(--kxc-success-border);
+}
+
+#kxc-contact-form .kxc-contact-message.error {
+    color: var(--kxc-error-text);
+    background-color: var(--kxc-error-bg);
+    border: 1px solid var(--kxc-error-border);
+}
+
+@keyframes kxc-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "kxc/contact-form-block",
+    "description": "Contact Form Gutenberg Block",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "KXC\\ContactForm\\": "src/"
+        }
+    }
+}

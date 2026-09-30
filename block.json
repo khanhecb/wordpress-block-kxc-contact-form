@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "site-core/contact-form",
+  "title": "Contact Form",
+  "category": "widgets",
+  "icon": "email",
+  "description": "Form liên hệ lưu trữ DB và quản lý trong Admin",
+  "editorScript": "file:./editor.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "script": "file:./script.js",
+  "render": "file:./render.php"
+}
