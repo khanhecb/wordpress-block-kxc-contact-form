@@ -78,7 +78,7 @@ final class Controller {
         // Return Respone
         return new WP_REST_Response([
             'success' => true,
-            'message' => '<span>Cảm ơn bạn đã gửi thông tin. Chúng tôi sẽ liên hệ sớm nhất!',
+            'message' => 'Cảm ơn bạn đã gửi thông tin. Chúng tôi sẽ liên hệ sớm nhất!',
         ], 200);
     }
 }

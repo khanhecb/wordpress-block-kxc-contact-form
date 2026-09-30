@@ -6,9 +6,8 @@
  * Author:              Nguyen Huu Khanh
  * Version:             1.0.0
  * Date:                26/09/08
- * Text Domain:         plugin-text-domain
+ * Text Domain:         kxc-contact-form
  * Requires PHP:        8.1
- * Requires at lesats:  8.1
  * 
  */
 
@@ -19,7 +18,6 @@ use KXC\ContactForm\Menu;
 use KXC\ContactForm\Database;
 
 defined("ABSPATH") || exit;
-
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
@@ -40,17 +38,11 @@ final class KXC_Contact_Form_Block {
         $this->init_hooks();
     }
 
-    /**
-     * Khởi tạo các Dependencies core
-     */
     private function init_dependencies(): void {
         $this->repo       = new Repository();
         $this->controller = new Controller($this->repo);
     }
 
-    /**
-     * Đăng ký toàn bộ các Hooks của WordPress
-     */
     private function init_hooks(): void {
         add_action('init', [$this, 'register_block']);
         add_action('rest_api_init', [$this, 'register_api']);

@@ -57,6 +57,9 @@ A lightweight standalone contact form block for Kha Xuyen Computer websites.
 
 Architecture Overview
 
+![Request/Response Flow](docs/img/request-reponse-flow.png)
+
+
 ```text
 src/
 ├── Admin.php        # Handles WP Admin UI and render dashboards
